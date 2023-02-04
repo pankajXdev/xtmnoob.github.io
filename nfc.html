@@ -9,13 +9,19 @@
 </head>
 <body>
 <div id="app"></div>
+<div id="app2"></div>
 <script>
     const  app = document.getElementById('app');
-
-    if ('NDEFReader' in window){
-        app.innerHTML = '<b style="color: green">Supported</b>';
+    const  app2 = document.getElementById('app2');
+    if ('nfc' in navigator){
+        app.innerHTML = '<b style="color: green">NFC is supported</b>';
     }else {
-        app.innerHTML = '<b style="color: red">Not supported</b>';
+        app.innerHTML = '<b style="color: red"> NFC is not supported</b>';
+    }
+    if ('NDEFReader' in window){
+        app2.innerHTML = '<b style="color: green">NFC is supported</b>';
+    }else {
+        app2.innerHTML = '<b style="color: red"> NFC is not supported</b>';
     }
 </script>
 </body>
